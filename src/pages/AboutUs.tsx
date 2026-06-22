@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import TopBar from '../components/TopBar'
 import SecondaryNavbar from '../components/SecondaryNavbar'
 
 /* ─────────────────────────────────────────────
@@ -11,6 +11,7 @@ const HeroSection: React.FC = () => (
     <div className="max-w-[1200px] mx-auto px-6 flex items-start gap-8 w-full">
       {/* Left text */}
       <div className="flex-1">
+        <p className="text-white/80 font-['Quasimoda'] text-[17px] font-medium leading-[20px] tracking-[1.4px] uppercase mb-[12px]">Welcome to YeneHealth</p>
         <h1 className="text-[56px] font-bold text-white leading-tight mb-6">
           FemTech Meets Africa
         </h1>
@@ -77,9 +78,9 @@ const HeroSection: React.FC = () => (
 ───────────────────────────────────────────── */
 interface StatItem { value: string; label: string }
 const stats: StatItem[] = [
-  { value: '6',      label: 'Awards Won' },
-  { value: '22',     label: 'Healthcare Partners' },
-  { value: '65+',    label: 'Expert Doctors' },
+  { value: '6', label: 'Awards Won' },
+  { value: '22', label: 'Healthcare Partners' },
+  { value: '65+', label: 'Expert Doctors' },
   { value: '50,000+', label: 'Happy Members' },
 ]
 
@@ -427,14 +428,9 @@ const FloatingActions: React.FC = () => (
 const AboutUs: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col font-inter bg-white">
-      {/* Top bar */}
-      <div className="bg-[#d9736a] py-2">
-        <div className="max-w-[1200px] mx-auto px-6 flex justify-end gap-7">
-          <Link to="/about" className="text-white text-[13px] font-normal hover:opacity-80 transition-opacity font-semibold underline">About Us</Link>
-          <a href="#" className="text-white text-[13px] font-normal hover:opacity-80 transition-opacity">Our Services</a>
-          <a href="#" className="text-white text-[13px] font-normal hover:opacity-80 transition-opacity">News</a>
-          <a href="#" className="text-white text-[13px] font-normal hover:opacity-80 transition-opacity">Contact Us</a>
-        </div>
+      {/* Top bar (shared component) */}
+      <div className="mb-[8px]">
+        <TopBar />
       </div>
 
       {/* Secondary navbar */}
