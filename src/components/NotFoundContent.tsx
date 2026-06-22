@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 
 const NotFoundContent: React.FC = () => {
   return (
-    <main className="mx-auto w-[1110.4px] min-h-[633.3px] pt-[100px] pb-10 text-center">
+    <main className="mx-auto w-[1110.4px] min-h-[633.3px] pt-[100px] pb-16 text-center">
       <img
         src="/404.png"
         alt="404 – Page Not Found"
         className="mx-auto mt-[0px] mb-[50px] w-[500px] h-[409px]"
       />
-      <h1 className="mt-4 mb-1 text-[40px] font-bold">
+      <h1 className="mt-4 mb-1 text-[41px] font-semibold">
         There's nothing here
       </h1>
       <p className="mt-3 text-[14px] text-gray-500">

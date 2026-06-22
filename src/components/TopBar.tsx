@@ -5,7 +5,7 @@ const TopBar: React.FC = () => {
   return (
     <div className="w-full h-[45px] bg-[rgb(225,122,110)]">
       <div className="h-full flex items-center justify-end pr-5 pl-6">
-        <ul className="flex items-center gap-12 text-white text-[14px] font-medium leading-5">
+        <ul className="flex items-center gap-12 text-white text-[17px] font-medium leading-5 font-['Times_New_Roman']">
           <li className="relative">
             <Link to="/about" className="pb-1 border-b-2 border-white hover:opacity-90 transition-opacity">
               About Us

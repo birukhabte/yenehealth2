@@ -1,12 +1,5 @@
 import React, { useState } from 'react'
 
-const PaperPlaneIcon = () => (
-  <svg className="w-[55px] h-[55px]" viewBox="0 0 24 24" fill="#2b9ee5">
-    <path d="M22 2 11 13" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M22 2 2 9l7 3 3 7 10-17z" />
-  </svg>
-)
-
 const SOCIALS = [
   { id: 'link-facebook', label: 'Facebook', path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
   { id: 'link-twitter', label: 'X', path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.259 5.629L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z' },
@@ -18,13 +11,14 @@ const SOCIALS = [
 interface NavColProps {
   links: { label: string; href: string; id: string }[]
   gapClass?: string
+  fontClass?: string
 }
 
-const NavCol: React.FC<NavColProps> = ({ links, gapClass = 'gap-[34px]' }) => (
+const NavCol: React.FC<NavColProps> = ({ links, gapClass = 'gap-[34px]', fontClass = '' }) => (
   <div className={`flex flex-col ${gapClass} whitespace-nowrap`}>
     {links.map((link) => (
       <a key={link.id} href={link.href} id={link.id}
-        className="text-[16px] font-medium text-[#111827] hover:text-[#f5676f] transition-colors">
+        className={`text-[16px] font-normal text-[#111827] hover:text-[#f5676f] transition-colors ${fontClass}`}>
         {link.label}
       </a>
     ))}
@@ -37,7 +31,7 @@ const Footer: React.FC = () => {
     <footer>
       {/* Footer content */}
       <div className="bg-[#f3f3f3]">
-        <div className="mx-auto max-w-[1800px] py-[40px] px-[20px] flex flex-wrap justify-between items-start">
+        <div className="mx-auto max-w-[1800px] pt-[24px] pb-[50px] px-[20px] flex flex-wrap justify-between items-start">
           {/* Newsletter card */}
           <div className="flex-1 basis-[300px] max-w-[600px] bg-white rounded-[14px] p-[18px] mb-[20px]">
             <div className="text-center">
@@ -70,28 +64,28 @@ const Footer: React.FC = () => {
           {/* Telegram block */}
           <div className="flex-1 basis-[200px] flex flex-col items-center mb-[20px]">
             <a href="#" id="telegram-link" className="flex items-center gap-[18px] hover:opacity-80 transition-opacity">
-              <PaperPlaneIcon />
+              <img src="/photo_2026-06-22_20-51-33.jpg" alt="Telegram" className="w-[55px] h-[55px] object-contain mix-blend-multiply" />
               <span className="text-[21px] font-semibold text-[#2b9ee5] whitespace-nowrap">Join our telegram channel</span>
             </a>
-            <div className="flex items-center gap-[24px] mt-[20px]">
+            <div className="flex items-center gap-[24px] mt-[12px]">
               {SOCIALS.map((s) => (
                 <a key={s.id} href="#" id={s.id} aria-label={s.label}
-                  className="w-[32px] h-[32px] rounded-[8px] bg-[#e17a6e] text-white flex items-center justify-center hover:opacity-85 transition-opacity">
-                  <svg className="w-[17px] h-[17px]" fill="currentColor" viewBox="0 0 24 24">
+                  className="w-[28px] h-[28px] rounded-[8px] bg-[#e17a6e] text-white flex items-center justify-center hover:opacity-85 transition-opacity">
+                  <svg className="w-[15px] h-[15px]" fill="currentColor" viewBox="0 0 24 24">
                     <path d={s.path} />
                   </svg>
                 </a>
               ))}
             </div>
             <a href="#" id="btn-investors"
-              className="mt-[28px] inline-flex items-center justify-center bg-[#e17a6e] hover:bg-[#d96d61] transition-colors text-white text-[22px] font-bold rounded-[24px] py-[10px] px-[20px] cursor-pointer">
+              className="mt-[28px] inline-flex items-center justify-center bg-[#e17a6e] hover:bg-[#d96d61] transition-colors text-white text-[20px] font-bold rounded-[22px] py-[10px] px-[20px] cursor-pointer">
               For Investors
             </a>
           </div>
 
           {/* Nav columns */}
           <div className="flex-1 basis-[200px] flex flex-wrap justify-between gap-[20px] mb-[20px]">
-            <NavCol links={[
+            <NavCol gapClass="gap-[14px]" links={[
               { label: 'About Us', href: '/about', id: 'footer-about-us' },
               { label: 'Our Services', href: '#', id: 'footer-our-services' },
               { label: 'Contact Us', href: '#', id: 'footer-contact-us' },
@@ -107,7 +101,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom copyright bar */}
-      <div className="w-full bg-[#e17a6e] py-[10px] px-[20px] flex flex-wrap items-center justify-between text-white">
+      <div className="w-full bg-[#e17a6e] py-[15px] px-[20px] flex flex-wrap items-center justify-between text-white">
         <span className="text-[14px]">
           © 2024 – YeneHealth • All Rights Reserved •{' '}
           <a href="#" id="footer-privacy" className="underline text-white hover:opacity-80">Privacy Policy</a>

@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
         <Link to="/" className="flex items-center ml-40">
           <img src="/yhnavbarlogo.svg" alt="YeneHealth" className="h-5 w-auto" />
         </Link>
-        <ul className="flex items-center gap-11 list-none text-[14px] font-medium leading-5 text-[#333] mr-20">
+        <ul className="flex items-center gap-11 list-none text-[14px] font-medium leading-5 text-[#333] mr-40">
           <li><a href="#" className="hover:text-[#d9736a] transition-colors">Wholesale</a></li>
           <li><a href="#" className="hover:text-[#d9736a] transition-colors">Staffing</a></li>
           <li>
