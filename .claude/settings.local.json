@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('Screenshot from 2026-06-21 10-33-52.png'\\); print\\(im.size\\)\")"
+    ]
+  }
+}

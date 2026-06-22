@@ -1,0 +1,151 @@
+<svg width="360" height="740" viewBox="0 0 360 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="360" y2="740" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a2a2e"/>
+      <stop offset="0.5" stop-color="#111114"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="coralCard" x1="24" y1="140" x2="336" y2="352" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8857c"/>
+      <stop offset="1" stop-color="#ef6f66"/>
+    </linearGradient>
+    <linearGradient id="tealBanner" x1="24" y1="372" x2="336" y2="446" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34a99e"/>
+      <stop offset="1" stop-color="#1f8b81"/>
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8b4ad"/>
+      <stop offset="1" stop-color="#e98b82"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="26" flood-color="#b23b34" flood-opacity="0.30"/>
+    </filter>
+    <clipPath id="screenClip"><rect x="12" y="12" width="336" height="716" rx="44"/></clipPath>
+  </defs>
+
+  <!-- Phone frame -->
+  <g filter="url(#softShadow)">
+    <rect x="0" y="0" width="360" height="740" rx="56" fill="url(#frameGrad)"/>
+    <rect x="6" y="6" width="348" height="728" rx="50" fill="#000000"/>
+    <rect x="12" y="12" width="336" height="716" rx="44" fill="#ffffff"/>
+  </g>
+
+  <g clip-path="url(#screenClip)">
+    <!-- Status bar -->
+    <text x="36" y="46" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d1d1f">11:20</text>
+    <g fill="#1d1d1f">
+      <rect x="288" y="36" width="3" height="9" rx="1"/>
+      <rect x="293" y="33" width="3" height="12" rx="1"/>
+      <rect x="298" y="30" width="3" height="15" rx="1"/>
+      <rect x="303" y="27" width="3" height="18" rx="1"/>
+      <path d="M312 33c4-4 11-4 15 0l-7.5 8z"/>
+      <rect x="330" y="30" width="18" height="11" rx="3" fill="none" stroke="#1d1d1f" stroke-width="1.4"/>
+      <rect x="332" y="32.5" width="12" height="6" rx="1.5"/>
+    </g>
+    <!-- Dynamic island -->
+    <rect x="140" y="24" width="80" height="22" rx="11" fill="#000000"/>
+
+    <!-- Profile header -->
+    <circle cx="46" cy="98" r="19" fill="url(#avatarGrad)"/>
+    <circle cx="46" cy="92" r="6.5" fill="#fff" opacity="0.95"/>
+    <path d="M35 108c1.5-7 20-7 22 0z" fill="#fff" opacity="0.95"/>
+    <text x="76" y="92" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="1" fill="#9aa0a6">WELCOME</text>
+    <text x="76" y="110" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="#1d2330">Yodit A. <tspan font-size="11" font-weight="600" fill="#9aa0a6">(5649874)</tspan></text>
+    <!-- Bell -->
+    <g transform="translate(318,86)" fill="none" stroke="#3b4250" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 9a6 6 0 0112 0c0 5 2 6 2 6H0s2-1 2-6z"/>
+      <path d="M6 18a2.4 2.4 0 004 0"/>
+    </g>
+
+    <!-- Our Services card -->
+    <rect x="24" y="140" width="312" height="212" rx="22" fill="url(#coralCard)"/>
+    <text x="44" y="174" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Our Services</text>
+
+    <!-- Service icons: 3 columns x 2 rows -->
+    <g transform="translate(78,210)">
+      <circle cx="0" cy="0" r="23" fill="#ffffff"/>
+      <g stroke="#ef6f66" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-7 -8v6a4 4 0 008 0v-6"/>
+        <path d="M1 2v4a5 5 0 005 5 4 4 0 004-4v-3"/>
+        <circle cx="14" cy="9" r="2.4" fill="#ef6f66" stroke="none"/>
+      </g>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#ffffff">Doctors</text>
+    </g>
+    <g transform="translate(180,210)">
+      <circle cx="0" cy="0" r="23" fill="#ffffff"/>
+      <g stroke="#ef6f66" stroke-width="2.4" stroke-linecap="round">
+        <path d="M0 -9v18M-9 0h18"/>
+      </g>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#ffffff">Pharmacy</text>
+    </g>
+    <g transform="translate(282,210)">
+      <circle cx="0" cy="0" r="23" fill="#ffffff"/>
+      <path d="M0 -9c5 6 7 9 7 12a7 7 0 01-14 0c0-3 2-6 7-12z" fill="#ef6f66"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Menstruation</text>
+      <text x="0" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Tracker</text>
+    </g>
+    <g transform="translate(78,300)">
+      <circle cx="0" cy="0" r="23" fill="#ffffff"/>
+      <g stroke="#ef6f66" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="-7" y="-9" width="14" height="18" rx="2.5"/>
+        <path d="M-3 -3h6M-3 1h6M-3 5h3"/>
+      </g>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">My Health</text>
+      <text x="0" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Records</text>
+    </g>
+    <g transform="translate(180,300)">
+      <circle cx="0" cy="0" r="23" fill="#ffffff"/>
+      <g transform="rotate(45)">
+        <rect x="-9" y="-5" width="18" height="10" rx="5" fill="none" stroke="#ef6f66" stroke-width="2"/>
+        <path d="M0 -5v10" stroke="#ef6f66" stroke-width="2"/>
+      </g>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Medication</text>
+      <text x="0" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Tracker</text>
+    </g>
+    <g transform="translate(282,300)">
+      <circle cx="0" cy="0" r="23" fill="#ffffff"/>
+      <g stroke="#ef6f66" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M-8 -8h7a2 2 0 012 2v14a2 2 0 00-2-2h-7z"/>
+        <path d="M8 -8h-7a2 2 0 00-2 2v14a2 2 0 012-2h7z"/>
+      </g>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Health</text>
+      <text x="0" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" fill="#ffffff">Knowledge</text>
+    </g>
+
+    <!-- Teal medication banner -->
+    <rect x="24" y="372" width="312" height="74" rx="16" fill="url(#tealBanner)"/>
+    <circle cx="296" cy="430" r="40" fill="#ffffff" opacity="0.08"/>
+    <text x="42" y="400" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Need Medication?</text>
+    <text x="42" y="416" font-family="Inter, Arial, sans-serif" font-size="8.5" fill="#ffffff" opacity="0.85">Buy the necessary items for your</text>
+    <text x="42" y="427" font-family="Inter, Arial, sans-serif" font-size="8.5" fill="#ffffff" opacity="0.85">menstruation from our pharmacy</text>
+    <rect x="42" y="430" width="74" height="20" rx="10" fill="#ffffff"/>
+    <text x="79" y="444" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="700" fill="#1f8b81">Buy Items Now</text>
+
+    <!-- Upcoming appointment -->
+    <text x="28" y="486" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d2330">Upcoming Appointment</text>
+    <text x="332" y="486" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#ef6f66">See All</text>
+
+    <rect x="24" y="500" width="312" height="90" rx="18" fill="#ffffff" stroke="#f0f1f4" stroke-width="1.5"/>
+    <circle cx="58" cy="534" r="18" fill="url(#avatarGrad)"/>
+    <circle cx="58" cy="528" r="6" fill="#fff"/>
+    <path d="M47 543c1.5-6 20-6 22 0z" fill="#fff"/>
+    <text x="88" y="528" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d2330">Dr. Feven Daniel</text>
+    <text x="88" y="544" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#9aa0a6">Gynaecology · 12 Yrs.</text>
+    <rect x="88" y="552" width="62" height="18" rx="9" fill="#e8f6f4"/>
+    <text x="119" y="565" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#1f8b81">Confirmed</text>
+    <g transform="translate(300,524)" fill="none" stroke="#ef6f66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="2" width="20" height="18" rx="3"/>
+      <path d="M0 8h20M5 -1v5M15 -1v5"/>
+    </g>
+
+    <!-- Bottom nav -->
+    <rect x="24" y="612" width="312" height="62" rx="20" fill="#fbfbfc" stroke="#f0f1f4" stroke-width="1.5"/>
+    <circle cx="70" cy="643" r="16" fill="#ef6f66"/>
+    <path d="M64 643l4 4 8-8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="150" cy="643" r="3.5" fill="#c7cad0"/>
+    <circle cx="210" cy="643" r="3.5" fill="#c7cad0"/>
+    <circle cx="290" cy="643" r="3.5" fill="#c7cad0"/>
+    <!-- Home indicator -->
+    <rect x="138" y="704" width="84" height="5" rx="2.5" fill="#1d1d1f"/>
+  </g>
+</svg>
