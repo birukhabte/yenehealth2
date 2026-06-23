@@ -52,8 +52,8 @@ const HeroSection: React.FC = () => (
       </div>
       {/* Right — overlapping phone mockups */}
       <div
-        className="flex-shrink-0 relative mt-24"
-        style={{ width: '332px', height: 'min(66vh, 540px)' }}
+        className="flex-shrink-0 relative mt-24 ml-[100px]"
+        style={{ width: '280px', height: 'min(58vh, 460px)' }}
       >
         {/* Back phone — smaller, behind and to the right */}
         <img
@@ -61,9 +61,9 @@ const HeroSection: React.FC = () => (
           alt="YeneHealth doctor dashboard"
           className="absolute z-[1] h-auto object-contain"
           style={{
-            width: '207px',
-            minHeight: '427px',
-            right: '-64px',
+            width: '175px',
+            minHeight: '360px',
+            right: '-54px',
             top: '50%',
             transform: 'translateY(calc(-50% + 20px))',
           }}
@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => (
           alt="YeneHealth App on smartphone"
           className="absolute z-[2] h-auto object-contain"
           style={{
-            width: '250px',
+            width: '210px',
             left: '0',
             top: '50%',
             transform: 'translateY(-50%)',
@@ -167,8 +167,7 @@ const FeatureRow: React.FC<FeatureRowProps> = ({ phoneImg, phoneAlt, title, desc
       <img
         src={phoneImg}
         alt={phoneAlt}
-        className="w-full h-auto object-contain rounded-2xl shadow-lg"
-        style={{ maxHeight: '600px' }}
+        className="relative z-10 max-w-[200px] md:max-w-[280px] object-contain"
       />
     </div>
     {/* Text */}
@@ -198,21 +197,21 @@ const features = [
     reverse: true,
   },
   {
-    phoneImg: '/phone_period.png',
+    phoneImg: '/H3.svg',
     phoneAlt: 'Period & pregnancy tracking',
     title: 'Period & Pregnancy Tracking',
     description: 'Take charge of your reproductive health with our intuitive cycle and pregnancy tracker. Log symptoms, track your cycle, monitor your fertility window, and receive personalized health insights. Our smart algorithm learns your unique cycle for more accurate predictions.',
     reverse: false,
   },
   {
-    phoneImg: '/phone_medication.png',
+    phoneImg: '/H4.svg',
     phoneAlt: 'Medication tracking',
     title: 'Medication Tracking',
     description: 'Never miss a dose again with our smart medication reminder and tracking system. Set up personalized reminders for all your medications, track your adherence over time, and receive alerts when it\'s time to refill your prescriptions. Your health routine, simplified.',
     reverse: true,
   },
   {
-    phoneImg: '/phone_health.png',
+    phoneImg: '/H5.png',
     phoneAlt: 'Health information',
     title: 'Confidentially Access Health Information',
     description: 'Browse our comprehensive library of women\'s health articles, guides, and educational content created by certified healthcare professionals. Get answers to sensitive health questions in a safe, private, and judgment-free environment tailored for African women.',
