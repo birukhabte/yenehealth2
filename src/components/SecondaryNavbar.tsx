@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 const navLinks = ['Home', 'Shop', 'Learn', 'Doctors']
 
 const SecondaryNavbar: React.FC = () => (
-  <nav className="sticky top-0 z-50 w-full h-[70px] bg-[#f3f3f3]">
+  <nav className="sticky top-0 z-50 w-full h-[80px] bg-[#f3f3f3]">
     <div className="max-w-[1860px] mx-auto h-full px-[20px] flex items-center">
       {/* ── Left: logo + links ── */}
       <div className="flex items-center gap-[22px] shrink-0">

@@ -10,7 +10,7 @@ const TopBar: React.FC = () => {
       <div className="h-full flex items-center justify-end pr-5 pl-6">
         <ul className={`flex items-center gap-12 text-white font-medium leading-5 ${isAboutUs ? "text-[14px] font-['Quasimoda']" : "text-[17px] font-['Times_New_Roman']"}`}>
           <li className="relative">
-            <Link to="/about" className="pb-1 border-b-2 border-white hover:opacity-90 transition-opacity">
+            <Link to="/about" className="hover:opacity-90 transition-opacity">
               About Us
             </Link>
           </li>

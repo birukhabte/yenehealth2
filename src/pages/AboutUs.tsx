@@ -7,7 +7,7 @@ import SecondaryNavbar from '../components/SecondaryNavbar'
    HERO SECTION
 ───────────────────────────────────────────── */
 const HeroSection: React.FC = () => (
-  <section className="bg-[#d9736a] min-h-screen pt-24 pb-[150px] overflow-hidden flex items-start">
+  <section className="bg-[#d9736a] min-h-screen pt-24 pb-[100px] overflow-hidden flex items-start">
     <div className="max-w-[1200px] mx-auto px-6 flex items-start gap-8 w-full">
       {/* Left text */}
       <div className="flex-1">
@@ -28,8 +28,10 @@ const HeroSection: React.FC = () => (
           Currently operating in Ethiopia and expanding into Rwanda, YeneHealth is building a scalable system that connects healthcare information, services, and medicines in one seamless ecosystem.
         </p>
         {/* Download buttons */}
-        <p className="text-white text-[13px] font-semibold mb-3">Download YeneHealth App</p>
-        <div className="flex items-center gap-3 mb-[48px]">
+        <p className="text-white text-[17px] mb-3">
+          <span className="font-semibold">Download YeneHealth App</span> now
+        </p>
+        <div className="flex items-center gap-3 mb-[24px]">
           {/* Google Play */}
           <a href="#" className="inline-block hover:opacity-90 transition-opacity">
             <img
@@ -106,7 +108,7 @@ const ServiceStatsSection: React.FC = () => (
     <div className="w-full max-w-[1060px] mx-auto px-[32px] flex flex-col items-center">
       {/* Teal service navigation card */}
       <div
-        className="relative z-10 w-full max-w-[840px] h-[140px] rounded-[16px] bg-[#009b97] flex items-start justify-center pt-[14px] -mt-[68px] shadow-[0_8px_20px_rgba(0,0,0,0.15)]"
+        className="relative z-10 w-full max-w-[840px] h-[160px] rounded-[16px] bg-[#009b97] flex items-start justify-center pt-[20px] -mt-[68px] shadow-[0_8px_20px_rgba(0,0,0,0.15)]"
       >
         <div className="w-full flex items-start justify-between px-[32px]">
           {serviceNavItems.map((item) => (
