@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 const navLinks = ['Home', 'Shop', 'Learn', 'Doctors']
 
 const SecondaryNavbar: React.FC = () => (
-  <nav className="w-full h-[70px] bg-[#f3f3f3]">
+  <nav className="sticky top-0 z-50 w-full h-[70px] bg-[#f3f3f3]">
     <div className="max-w-[1860px] mx-auto h-full px-[20px] flex items-center">
       {/* ── Left: logo + links ── */}
       <div className="flex items-center gap-[22px] shrink-0">
@@ -43,7 +43,7 @@ const SecondaryNavbar: React.FC = () => (
         <button
           type="button"
           aria-label="Search"
-          className="ml-[8px] w-[50px] h-[38px] rounded-[999px] bg-[#e17a6e] flex items-center justify-center shrink-0 hover:brightness-105 transition"
+          className="ml-[8px] w-[62px] h-[38px] rounded-[999px] bg-[#e17a6e] flex items-center justify-center shrink-0 hover:brightness-105 transition"
         >
           <svg className="w-[15px] h-[15px]" fill="none" stroke="#ffffff" strokeWidth="2.4" viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="7" />

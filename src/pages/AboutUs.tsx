@@ -7,7 +7,7 @@ import SecondaryNavbar from '../components/SecondaryNavbar'
    HERO SECTION
 ───────────────────────────────────────────── */
 const HeroSection: React.FC = () => (
-  <section className="bg-[#d9736a] min-h-screen pt-16 pb-0 overflow-hidden flex items-start">
+  <section className="bg-[#d9736a] min-h-screen pt-24 pb-[150px] overflow-hidden flex items-start">
     <div className="max-w-[1200px] mx-auto px-6 flex items-start gap-8 w-full">
       {/* Left text */}
       <div className="flex-1">
@@ -29,44 +29,54 @@ const HeroSection: React.FC = () => (
         </p>
         {/* Download buttons */}
         <p className="text-white text-[13px] font-semibold mb-3">Download YeneHealth App</p>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 mb-[48px]">
           {/* Google Play */}
-          <a href="#" className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 20.5v-17c0-.83 1-.95 1.46-.43l13 8.5c.4.26.4.86 0 1.12l-13 8.5C3.96 21.46 3 21.33 3 20.5z" />
-            </svg>
-            <div>
-              <div className="text-[9px] leading-none text-white/70">GET IT ON</div>
-              <div className="text-[13px] font-semibold leading-tight">Google Play</div>
-            </div>
+          <a href="#" className="inline-block hover:opacity-90 transition-opacity">
+            <img
+              src="/google-play.png"
+              alt="Get it on Google Play"
+              className="h-[40px] w-auto"
+            />
           </a>
           {/* App Store */}
-          <a href="#" className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-            </svg>
-            <div>
-              <div className="text-[9px] leading-none text-white/70">Download on the</div>
-              <div className="text-[13px] font-semibold leading-tight">App Store</div>
-            </div>
+          <a href="#" className="inline-block hover:opacity-90 transition-opacity">
+            <img
+              src="/app-store.png"
+              alt="Download on the App Store"
+              className="h-[40px] w-auto"
+            />
           </a>
         </div>
       </div>
       {/* Right — overlapping phone mockups */}
-      <div className="flex-shrink-0 relative w-[480px] h-[80vh] flex items-center justify-center">
-        {/* Back phone — larger, behind and to the right */}
+      <div
+        className="flex-shrink-0 relative mt-24"
+        style={{ width: '332px', height: 'min(66vh, 540px)' }}
+      >
+        {/* Back phone — smaller, behind and to the right */}
         <img
           src="/aboutback.svg"
           alt="YeneHealth doctor dashboard"
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-auto object-contain opacity-95"
-          style={{ maxHeight: '78vh' }}
+          className="absolute z-[1] h-auto object-contain"
+          style={{
+            width: '207px',
+            minHeight: '427px',
+            right: '-64px',
+            top: '50%',
+            transform: 'translateY(calc(-50% + 20px))',
+          }}
         />
-        {/* Front phone — medical dashboard, in front and to the left */}
+        {/* Front phone — primary focus, in front and slightly left */}
         <img
           src="/aboutfront.svg"
           alt="YeneHealth App on smartphone"
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-[290px] h-auto object-contain drop-shadow-2xl"
-          style={{ maxHeight: '74vh' }}
+          className="absolute z-[2] h-auto object-contain"
+          style={{
+            width: '250px',
+            left: '0',
+            top: '50%',
+            transform: 'translateY(-50%)',
+          }}
         />
       </div>
     </div>
@@ -74,27 +84,67 @@ const HeroSection: React.FC = () => (
 )
 
 /* ─────────────────────────────────────────────
-   STATS BAR
+   SERVICE NAV + STATISTICS (reference section)
 ───────────────────────────────────────────── */
-interface StatItem { value: string; label: string }
-const stats: StatItem[] = [
-  { value: '6', label: 'Awards Won' },
-  { value: '22', label: 'Healthcare Partners' },
-  { value: '65+', label: 'Expert Doctors' },
-  { value: '50,000+', label: 'Happy Members' },
+const serviceNavItems = [
+  { icon: '/service-doctors.png', label: 'Doctors' },
+  { icon: '/service-pharmacy.png', label: 'Pharmacy' },
+  { icon: '/service-period.png', label: 'Period Tracker' },
+  { icon: '/service-medication.png', label: 'Medication Tracker' },
+  { icon: '/service-health.png', label: 'Health Knowledge' },
 ]
 
-const StatsBar: React.FC = () => (
-  <div className="bg-[#3a9e99]">
-    <div className="max-w-[1200px] mx-auto px-6 py-6 grid grid-cols-4 divide-x divide-white/30">
-      {stats.map((s) => (
-        <div key={s.label} className="flex flex-col items-center px-4">
-          <span className="text-white text-[28px] font-bold leading-tight">{s.value}</span>
-          <span className="text-white/80 text-[12px] mt-0.5 text-center">{s.label}</span>
+const statItems = [
+  { value: '6', label: 'Years in operation' },
+  { value: '22', label: 'Employees' },
+  { value: '65+', label: 'Yrs. of Combined team experience' },
+  { value: '50,000+', label: 'Women Reached' },
+]
+
+const ServiceStatsSection: React.FC = () => (
+  <section className="relative bg-[#f9fafb] pb-[40px]">
+    <div className="w-full max-w-[1060px] mx-auto px-[32px] flex flex-col items-center">
+      {/* Teal service navigation card */}
+      <div
+        className="relative z-10 w-full max-w-[840px] h-[140px] rounded-[16px] bg-[#009b97] flex items-start justify-center pt-[14px] -mt-[68px] shadow-[0_8px_20px_rgba(0,0,0,0.15)]"
+      >
+        <div className="w-full flex items-start justify-between px-[32px]">
+          {serviceNavItems.map((item) => (
+            <div key={item.label} className="flex flex-col items-center w-[88px]">
+              <img
+                src={item.icon}
+                alt={item.label}
+                className="w-[56px] h-[56px] object-contain"
+              />
+              <span
+                className={`mt-[6px] text-white text-[13px] font-medium leading-[16px] text-center ${
+                  item.label === 'Medication Tracker' ? 'max-w-[84px]' : 'whitespace-nowrap'
+                }`}
+              >
+                {item.label}
+              </span>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      {/* White statistics card */}
+      <div
+        className="relative z-10 w-full max-w-[1060px] h-[170px] rounded-[18px] bg-white mt-[48px] shadow-[0_3px_16px_rgba(0,0,0,0.06)] grid grid-cols-4 items-center"
+      >
+        {statItems.map((stat) => (
+          <div key={stat.label} className="flex flex-col items-center justify-center px-[10px]">
+            <span className="text-[#f7666d] text-[46px] font-bold leading-[52px] tracking-[-0.02em]">
+              {stat.value}
+            </span>
+            <span className="mt-[4px] text-[#5588c3] text-[14px] font-normal leading-[18px] text-center max-w-[180px]">
+              {stat.label}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
 )
 
 /* ─────────────────────────────────────────────
@@ -438,7 +488,7 @@ const AboutUs: React.FC = () => {
 
       {/* Page sections */}
       <HeroSection />
-      <StatsBar />
+      <ServiceStatsSection />
       <ServicesHighlights />
       <PartnersSection />
       <NewsSection />
