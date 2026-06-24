@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => (
       {/* Right — overlapping phone mockups */}
       <div
         className="flex-shrink-0 relative mt-24 ml-[100px]"
-        style={{ width: '280px', height: 'min(58vh, 460px)' }}
+        style={{ width: '310px', height: 'min(62vh, 500px)' }}
       >
         {/* Back phone — smaller, behind and to the right */}
         <img
@@ -61,8 +61,8 @@ const HeroSection: React.FC = () => (
           alt="YeneHealth doctor dashboard"
           className="absolute z-[1] h-auto object-contain"
           style={{
-            width: '175px',
-            minHeight: '360px',
+            width: '195px',
+            minHeight: '400px',
             right: '-54px',
             top: '50%',
             transform: 'translateY(calc(-50% + 20px))',
@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => (
           alt="YeneHealth App on smartphone"
           className="absolute z-[2] h-auto object-contain"
           style={{
-            width: '210px',
+            width: '235px',
             left: '0',
             top: '50%',
             transform: 'translateY(-50%)',
@@ -119,9 +119,8 @@ const ServiceStatsSection: React.FC = () => (
                 className="w-[56px] h-[56px] object-contain"
               />
               <span
-                className={`mt-[6px] text-white text-[13px] font-medium leading-[16px] text-center ${
-                  item.label === 'Medication Tracker' ? 'max-w-[84px]' : 'whitespace-nowrap'
-                }`}
+                className={`mt-[6px] text-white text-[13px] font-medium leading-[16px] text-center ${item.label === 'Medication Tracker' ? 'max-w-[84px]' : 'whitespace-nowrap'
+                  }`}
               >
                 {item.label}
               </span>
@@ -158,20 +157,28 @@ interface FeatureRowProps {
   title: string
   description: string
   reverse?: boolean
+  /* Extra Tailwind classes to control this phone's margin/position,
+     e.g. 'mt-[20px] ml-[40px]'. Applied to the <img>. */
+  phoneClassName?: string
+  /* Extra Tailwind classes for the phone's wrapping <div> — use this to
+     control the whole phone column independently (overrides defaults you
+     append to it), e.g. 'w-[400px] pl-[40px] justify-end'. */
+  phoneWrapperClassName?: string
 }
 
-const FeatureRow: React.FC<FeatureRowProps> = ({ phoneImg, phoneAlt, title, description, reverse }) => (
-  <div className={`max-w-[1240px] mx-auto px-[24px] py-[64px] flex items-center gap-[80px] ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
+const FeatureRow: React.FC<FeatureRowProps> = ({ phoneImg, phoneAlt, title, description, reverse, phoneClassName, phoneWrapperClassName }) => (
+  <div className={`max-w-[1240px] mx-auto px-[24px] py-[64px] flex items-center gap-[120px] ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
     {/* Phone mockup */}
-    <div className="flex-shrink-0 w-[330px] flex justify-center">
+    <div className={`flex-shrink-0 w-[330px] pl-[100px] flex justify-center ${phoneWrapperClassName ?? ''}`}>
       <img
         src={phoneImg}
         alt={phoneAlt}
-        className="relative z-10 max-w-[200px] md:max-w-[280px] object-contain"
+        className={`relative z-10 max-w-[200px] md:max-w-[280px] object-contain ${phoneClassName ?? ''}`}
+
       />
     </div>
     {/* Text */}
-    <div className="flex-1">
+    <div className="flex-1 pl-[50px] pr-[50px]">
       <h3 className="text-[30px] font-bold text-[#1f2d3d] mb-[18px] leading-[38px] tracking-[-0.01em]">{title}</h3>
       <p className="text-[16px] font-normal text-[#5b6675] leading-[28px] max-w-[560px]">{description}</p>
     </div>
@@ -181,6 +188,11 @@ const FeatureRow: React.FC<FeatureRowProps> = ({ phoneImg, phoneAlt, title, desc
 /* ─────────────────────────────────────────────
    HIGHLIGHTS OF OUR SERVICES
 ───────────────────────────────────────────── */
+/* Shared positioning for the Online Pharmacy (H2) and Medication Tracking (H4)
+   phones — edit these two lines to move both of them together. */
+const PAIR_PHONE = 'ml-[-80px]' // controls the <img> — e.g. 'mt-[20px] ml-[40px]'
+const PAIR_PHONE_WRAPPER = 'justify-start' // controls the column <div> — e.g. 'w-[400px] pl-[40px] justify-end'
+
 const features = [
   {
     phoneImg: '/H1.png',
@@ -188,6 +200,7 @@ const features = [
     title: 'Access to Doctors Anytime, Anywhere',
     description: 'Connect with verified doctors and specialists through the YeneHealth app. Get on-demand and virtual consultations, medical advice, and prescriptions from the comfort of your home. Receive personalized care tailored to your needs.',
     reverse: false,
+    phoneClassName: '', // e.g. 'mt-[20px] ml-[40px]'
   },
   {
     phoneImg: '/H2.svg',
@@ -195,6 +208,8 @@ const features = [
     title: 'Online Pharmacy with Discreet Delivery',
     description: 'Order your medications and healthcare products online with complete privacy. Our licensed pharmacists review every order for your safety, and we deliver directly to your door in discreet packaging. Enjoy competitive pricing and wide availability of medications.',
     reverse: true,
+    phoneClassName: PAIR_PHONE,
+    phoneWrapperClassName: PAIR_PHONE_WRAPPER,
   },
   {
     phoneImg: '/H3.svg',
@@ -202,6 +217,7 @@ const features = [
     title: 'Period & Pregnancy Tracking',
     description: 'Take charge of your reproductive health with our intuitive cycle and pregnancy tracker. Log symptoms, track your cycle, monitor your fertility window, and receive personalized health insights. Our smart algorithm learns your unique cycle for more accurate predictions.',
     reverse: false,
+    phoneClassName: '', // e.g. 'mt-[20px] ml-[40px]'
   },
   {
     phoneImg: '/H4.svg',
@@ -209,6 +225,8 @@ const features = [
     title: 'Medication Tracking',
     description: 'Never miss a dose again with our smart medication reminder and tracking system. Set up personalized reminders for all your medications, track your adherence over time, and receive alerts when it\'s time to refill your prescriptions. Your health routine, simplified.',
     reverse: true,
+    phoneClassName: PAIR_PHONE,
+    phoneWrapperClassName: PAIR_PHONE_WRAPPER,
   },
   {
     phoneImg: '/H5.png',
@@ -216,6 +234,7 @@ const features = [
     title: 'Confidentially Access Health Information',
     description: 'Browse our comprehensive library of women\'s health articles, guides, and educational content created by certified healthcare professionals. Get answers to sensitive health questions in a safe, private, and judgment-free environment tailored for African women.',
     reverse: false,
+    phoneClassName: 'mt-[20px] ml-[60px]'
   },
 ]
 
